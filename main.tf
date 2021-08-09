@@ -1,5 +1,6 @@
 resource "aws_security_group" "sec-group" {
   name        = var.security_group_name
+  vpc_id      = var.vpc_id
   description = "common security group"
   dynamic "ingress" {
     for_each = var.ingress_ports
